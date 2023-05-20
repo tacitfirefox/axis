@@ -1,17 +1,20 @@
 <Project>
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
-    <LangVersion>latest</LangVersion>
     <CodeAnalysisRuleSet>$(SolutionDir)\tacitfirefox.ruleset</CodeAnalysisRuleSet>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <DocumentationFile>$(OutputPath)\$(MsBuildProjectName).xml</DocumentationFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <GitVersionBaseDirectory>$(MSBuildThisFileDirectory)</GitVersionBaseDirectory>
+    <LangVersion>latest</LangVersion>
+    <OutputPath>bin\$(Configuration)</OutputPath>
+    <TargetFramework>net7.0</TargetFramework>
   </PropertyGroup>
   
   <PropertyGroup>
-    <PackageId>axis</PackageId>
+    <Authors>tacitfirefox</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>Axis</PackageId>
+    <Version>$(AssemblyInformationVersion)</Version>
   </PropertyGroup>
 
   <ItemGroup>

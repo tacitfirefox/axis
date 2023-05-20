@@ -23,6 +23,7 @@ public struct Value<T>
     public Value(Dimension<T> dimension)
         : this(dimension, dimension.OriginValue)
     {
+        this.Dimension = dimension;
     }
 
     /// <summary>
@@ -30,7 +31,7 @@ public struct Value<T>
     /// </summary>
     /// <param name="dimension">The dimensional axis this value is on.</param>
     /// <param name="magnitude">The magnitude of this value.</param>
-    /// <exception cref="ArgumentNullException">Thrown when the given dimensional axis is null.</exception>
+    /// <exception cref="ArgumentNullException">Thrown when the given dimensional axis is default.</exception>
     public Value(
         Dimension<T> dimension,
         T magnitude)
@@ -45,7 +46,7 @@ public struct Value<T>
     required public Dimension<T> Dimension { get; init; }
 
     /// <summary>
-    /// Gets or sets the magnitude of this value.
+    /// Gets or sets the distance along the dimension axis this value is from the axis' origin value.
     /// </summary>
     public T Magnitude { get; set; }
 }

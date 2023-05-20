@@ -9,17 +9,7 @@
   "cloudBuild": {
       "setVersionVariables": false,
       "buildNumber": {
-          "enabled": false,
-          "includeCommitId": {
-              "when": "nonPublicReleaseOnly",
-              "where": "buildMetadata"
-          }
+          "enabled": false
       }
-  },
-  "release": {
-      "tagName": "v{version}",
-      "branchName": "v{version}",
-      "versionIncrement": "patch",
-      "firstUnstableTag": "alpha"
   }
 }

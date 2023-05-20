@@ -1,2 +1,2 @@
 # axis
-a generic axis of measurement library for .net
+Provides an abstraction of measuring a value of generalized units.

@@ -1,0 +1,7 @@
+<Project>
+  <Target Name="MyVersionSetter" DependsOnTargets="GetBuildVersion">
+    <PropertyGroup>
+      <MyVersionProperty>My version is: $(PackageVersion)</MyVersionProperty>
+    </PropertyGroup>
+  </Target>
+</Project>

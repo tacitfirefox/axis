@@ -1,0 +1,29 @@
+<Project>
+
+  <PropertyGroup>
+    <CodeAnalysisRuleSet>$(SolutionDir)\tacitfirefox.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>$(OutputPath)\$(MsBuildProjectName).xml</DocumentationFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <GitVersionBaseDirectory>$(MSBuildThisFileDirectory)</GitVersionBaseDirectory>
+    <LangVersion>latest</LangVersion>
+    <OutputPath>bin\$(Configuration)</OutputPath>
+    <TargetFramework>net7.0</TargetFramework>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <Authors>tacitfirefox</Authors>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>Axis</PackageId>
+    <Version>$(AssemblyInformationVersion)</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Cake.GitVersioning" Version="3.6.132" PrivateAssets="all" Condition="!Exists('packages.config')" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="$(SolutionDir).stylecop.json" Link=".stylecop.json" />
+  </ItemGroup>
+
+</Project>
